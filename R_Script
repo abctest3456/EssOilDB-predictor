@@ -1,0 +1,26 @@
+'plant_info <- read_csv("C:/Users/hadoop_pc/Desktop/info_files/Plant_info_9April.csv")'
+
+comp_info <- read.csv("C:/Users/hadoop_pc/Desktop/info_files/comp_info_9April.csv")
+
+dim(plant_info)
+
+dim(comp_info)
+
+
+library(sqldf)
+
+plant_info_LC <- sqldf("Select * from plant_info where Plant_name='Lantana camara'")
+
+comp_info_LC <- sqldf("Select * from plant_info_LC JOIN comp_info USING(Paper_code)")
+
+
+## Example
+## inner join
+df3 <- sqldf("SELECT CustomerId, Product, State 
+              FROM df1
+              JOIN df2 USING(CustomerID)")
+
+## left join (substitute 'right' for right join)
+df4 <- sqldf("SELECT CustomerId, Product, State 
+              FROM df1
+              LEFT JOIN df2 USING(CustomerID)")
