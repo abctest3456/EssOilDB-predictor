@@ -1,20 +1,29 @@
-'plant_info <- read_csv("C:/Users/hadoop_pc/Desktop/info_files/Plant_info_9April.csv")'
+##info file for all plants into EssOilDB
+
+plant_info <- read_csv("C:/Users/hadoop_pc/Desktop/info_files/Plant_info_9April.csv")
+
+##info file for all compounds into EssOilDB
 
 comp_info <- read.csv("C:/Users/hadoop_pc/Desktop/info_files/comp_info_9April.csv")
 
+## Command to check dimension.
 dim(plant_info)
 
+## Command to check dimension.
 dim(comp_info)
 
 
 library(sqldf)
 
+#### Getting article details for Lantana camara as Paper_code as unique field.
 plant_info_LC <- sqldf("Select * from plant_info where Plant_name='Lantana camara'")
 
+
+#### Getting all discussed compounds of Lantana camara using join operation and sqlquery.
 comp_info_LC <- sqldf("Select * from plant_info_LC JOIN comp_info USING(Paper_code)")
 
 
-## Example
+## Example/Sample
 ## inner join
 df3 <- sqldf("SELECT CustomerId, Product, State 
               FROM df1
