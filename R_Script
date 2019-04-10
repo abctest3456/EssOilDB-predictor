@@ -49,4 +49,19 @@ df4 <- sqldf("SELECT CustomerId, Product, State
  
   df4 <- merge(df1,df2, by = "Paper_code")
   
+  ### Aggregate rows based on column values
+  
+  t <- aggregate(table[,2:4], list(table[,1]), function(x) paste0(unique(x)))
+  
+  dim(t)
+  
+  ### Get dataframe structure
+  
+  dim(df3)
+  
+  str(df3)
+  
+  
+  
+  
   
