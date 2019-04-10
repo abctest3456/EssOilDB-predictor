@@ -33,3 +33,20 @@ df3 <- sqldf("SELECT CustomerId, Product, State
 df4 <- sqldf("SELECT CustomerId, Product, State 
               FROM df1
               LEFT JOIN df2 USING(CustomerID)")
+              
+              
+ ### getting count of unique values of each column 
+ 
+ rapply(df3,function(x)length(unique(x)))
+ 
+ unique(df3[c("Paper_code")])
+ 
+ ### Get count for the unique values
+ 
+ dim(unique(df3[c("Paper_code")]))
+ 
+ ### merge the data frame 
+ 
+  df4 <- merge(df1,df2, by = "Paper_code")
+  
+  
