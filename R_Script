@@ -61,6 +61,11 @@ df4 <- sqldf("SELECT CustomerId, Product, State
   
   str(df3)
   
+  ###Subset of the dataframe 
+  data <- subset(comp_info_LC, select=c(2,11,13,14,17,18,19,20))
+  
+  
+  
   
   
   
