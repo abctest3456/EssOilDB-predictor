@@ -73,7 +73,8 @@ data[c("size", "id", "weight")]
   ### writing to csv file
    write.csv(data,"C:/Users/hadoop_pc/Desktop/info_files/comp_info_LC_RStudio.csv")
    
-   
+#######14 April
+
   
   
   
