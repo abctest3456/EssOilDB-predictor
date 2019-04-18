@@ -90,3 +90,6 @@ sql query to get specified plant name columns corresponding compound_name and qu
 
 > data_OS_OB_LC_OG_NT<-bind_rows(data.frame(OS),data.frame(OB),data.frame(LC),data.frame(OG),data.frame(NT))
 
+#### removing duplicates (column names) from the data frame
+
+data_OS_OB_LC_OG_NT<-data_OS_OB_LC_OG_NT[,!duplicated(colnames(data_OS_OB_LC_OG_NT))]
