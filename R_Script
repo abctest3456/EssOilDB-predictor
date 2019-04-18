@@ -75,7 +75,18 @@ data[c("size", "id", "weight")]
    
 #######14 April
 
-  
-  
-  
-  
+########18 April
+sql query to get specified plant name columns corresponding compound_name and quantity.
+
+> OG<- sqldf("Select * from one_sheet where Plant_name='Ocimum gratissimum'")
+> OG <- subset(OG, select=c(2,15,4))
+> OG<-t(OG)
+> colnames(OG) <- OG[1,]
+> OG<-OG[-1,]
+> dim(OG)
+[1]   2 305
+
+### bind_rows over all above geberated data - OS,OB,LC,OG,NT.
+
+> data_OS_OB_LC_OG_NT<-bind_rows(data.frame(OS),data.frame(OB),data.frame(LC),data.frame(OG),data.frame(NT))
+
