@@ -101,3 +101,7 @@ data_A[data_A$id %in% data_B$id,]
 # Rename a column in R
 colnames(data)[colnames(data)=="old_name"] <- "new_name"
 > colnames(l)[colnames(l)=="X.Lantana.camara."] <- "plant_name
+
+#### matrix forming
+
+m1 <- matrix(C<-(0),nrow=1841, ncol=7159)
