@@ -105,3 +105,10 @@ colnames(data)[colnames(data)=="old_name"] <- "new_name"
 #### matrix forming
 
 m1 <- matrix(C<-(0),nrow=1841, ncol=7159)
+
+###load csv and convert to matrix
+
+temp = read.csv("C:/Users/hadoop_pc/Desktop/empty_matrix_sheet.csv", sep=",", row.names=1)
+temp1 <- as.matrix(temp) 
+class(temp1)
+
