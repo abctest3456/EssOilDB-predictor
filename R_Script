@@ -98,4 +98,6 @@ data_OS_OB_LC_OG_NT<-data_OS_OB_LC_OG_NT[,!duplicated(colnames(data_OS_OB_LC_OG_
 
 data_A[data_A$id %in% data_B$id,]
 
+# Rename a column in R
+colnames(data)[colnames(data)=="old_name"] <- "new_name"
 
