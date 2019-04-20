@@ -112,3 +112,7 @@ temp = read.csv("C:/Users/hadoop_pc/Desktop/empty_matrix_sheet.csv", sep=",", ro
 temp1 <- as.matrix(temp) 
 class(temp1)
 
+### correcting column header
+
+#### correcting column names as of same as column entries.
+temp20 = read.csv("C:/Users/hadoop_pc/Desktop/empty_matrix_sheet.csv", sep=",", row.names=1,check.names=FALSE)
