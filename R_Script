@@ -195,7 +195,7 @@ lapply(1:1840, function(n1){
     sumat <- matrix(,,3);
      ss <- one_sheet_subset[one_sheet_subset[,1] %in% plant_name_unique_vect[n1],];
      submat <- rbind(sumat, ss);
-     submat <- rbind(sumat, ss);
+     
      value <- submat[submat[,2] %in% comp_name_unique_vect[n2],3];
      if(length(value) < 1){
        em_mat_temp200_1_part[n1,n2] <<- 0;
