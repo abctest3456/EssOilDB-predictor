@@ -209,5 +209,11 @@ lapply(1:1840, function(n1){
    ### write data frames or matrixes to csv formatted file.
    write.csv(em_mat_temp200_1_part, "C:/Users/hadoop_pc/Desktop/em_mat_temp200_1_part.csv", sep = " ",row.names = TRUE, col.names = TRUE)
    
-   
+   #### KMEANS clustering 
+   > dim(temp200cluster_dummy)
+   > temp200cluster_dummy_kmeans <- kmeans(temp200cluster_dummy[,2:303], 20,nstart = 20)
+   > temp200cluster_dummy_kmeans_table<-table(temp200cluster_dummy$plant_name,temp200cluster_dummy_kmeans$cluster)
+> write.csv(temp200cluster_dummy_kmeans_table,"C:/Users/hadoop_pc/Desktop/temp200cluster_dummy_kmeans_table.csv")
+>
+  
    
