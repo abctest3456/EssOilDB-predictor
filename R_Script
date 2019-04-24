@@ -214,6 +214,11 @@ lapply(1:1840, function(n1){
    > temp200cluster_dummy_kmeans <- kmeans(temp200cluster_dummy[,2:303], 20,nstart = 20)
    > temp200cluster_dummy_kmeans_table<-table(temp200cluster_dummy$plant_name,temp200cluster_dummy_kmeans$cluster)
 > write.csv(temp200cluster_dummy_kmeans_table,"C:/Users/hadoop_pc/Desktop/temp200cluster_dummy_kmeans_table.csv")
->
+
+### error linear model prediction
+> ocimum_pr<-predict(ocimum_lm,em_mat_temp24A_filled_testset[,3:7161])
+Error: variables ‘nerol’, ‘2-tridecanone’, ‘beta-damascone’ were specified with different types from the fit
+
+###
   
    
