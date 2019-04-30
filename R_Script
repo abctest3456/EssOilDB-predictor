@@ -222,3 +222,5 @@ Error: variables ‘nerol’, ‘2-tridecanone’, ‘beta-damascone’ were spe
 ###
   
    
+### removing NA values
+data[is.na(data)] <- 0
