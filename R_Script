@@ -224,3 +224,51 @@ Error: variables ‘nerol’, ‘2-tridecanone’, ‘beta-damascone’ were spe
    
 ### removing NA values
 data[is.na(data)] <- 0
+
+#### Hierarichal clustering and visualisation
+
+> avg_dend_obj <- as.dendrogram(hc3)
+> avg_col_dend <- color_branches(avg_dend_obj, h = 3)
+> plot(avg_col_dend)
+> hc1 <- hclust(d, method = "complete" )
+> plot(hc1)
+
+### scaling of the data (optional)
+seeds_df_sc <- as.data.frame(scale(seeds_df))
+summary(seeds_df_sc)
+
+### generating distance matrix
+dist_mat <- dist(seeds_df_sc, method = 'euclidean')
+
+#### clustering the data - distance matrix
+hclust_avg <- hclust(dist_mat, method = 'average')
+
+### plot
+plot(hclust_avg)
+### cut the clustered data
+cut_avg <- cutree(hclust_avg, k = 3)
+
+### plot
+plot(hclust_avg)
+rect.hclust(hclust_avg , k = 3, border = 2:6)
+abline(h = 3, col = 'red')
+
+### tree visualisation
+
+suppressPackageStartupMessages(library(dendextend))
+avg_dend_obj <- as.dendrogram(hclust_avg)
+avg_col_dend <- color_branches(avg_dend_obj, h = 3)
+plot(avg_col_dend)
+
+### Alternate way to plot and visualise the data
+'''''''''''
+# Dissimilarity matrix
+d <- dist(df, method = "euclidean")
+ 
+# Hierarchical clustering using Complete Linkage
+hc1 <- hclust(d, method = "complete" )
+ 
+# Plot the obtained dendrogram
+plot(hc1)
+
+''''''''''''
