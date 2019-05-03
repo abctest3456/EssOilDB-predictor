@@ -272,3 +272,27 @@ hc1 <- hclust(d, method = "complete" )
 plot(hc1)
 
 ''''''''''''
+
+### dendrogram and phylogenetic tree generation
+> labels_colors(dend) <-
++     rainbow_hcl(3)[sort_levels_values(
++         as.numeric(iris[,5])[order.dendrogram(dend)]
++     )]
+Error in order.dendrogram(dend) : 
+  'order.dendrogram' requires a dendrogram
+> dend <- as.dendrogram(new_df2_hc)
+> labels_colors(dend) <-
++     rainbow_hcl(3)[sort_levels_values(
++         as.numeric(iris[,5])[order.dendrogram(dend)]
++     )]
+> labels(dend) <- paste(as.character(new_df[,1])[order.dendrogram(dend)],
++                       "(",labels(dend),")", 
++                       sep = "")
+> plot(dend)
+> writeNexus(dend, "example.nex")
+Error in write.tree(tree[[i]]) : object "phy" has no trees
+> dend<-as.phylo(dend)
+> writeNexus(dend, "example.nex")
+> writeNexus(dend, "C:/Users/hadoop_pc/Desktop/example1.nex")
+
+####
